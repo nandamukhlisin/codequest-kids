@@ -1,0 +1,15 @@
+
+# Environment dan rahasia
+.env
+.env.*
+!.env.example
+
+# Log dan file sementara
+*.log
+.DS_Store
+Thumbs.db
+
+# File pengujian sementara
+test_db.php
+test_baseurl.php
+test_api_flow.php

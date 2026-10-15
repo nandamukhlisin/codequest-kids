@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="id" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&amp;family=Quicksand:wght@600;700;800&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+.cell-glow { box-shadow: 0 0 16px rgba(67, 185, 144, 0.7); }
+.command-executing { border: 2px solid #1550d3 !important; background-color: #dce1ff !important; transform: scale(1.02); box-shadow: 0 0 10px rgba(21, 80, 211, 0.35); }
+@keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+.animate-bounce-gentle { animation: bounce-slow 1.6s infinite ease-in-out; }
+@keyframes pulse-ring { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(21, 80, 211, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(21, 80, 211, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(21, 80, 211, 0); } }
+.robot-active-ring { animation: pulse-ring 1.8s infinite cubic-bezier(0.45, 0, 0.2, 1); }
+@keyframes confetti-fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 1; } 100% { transform: translateY(350px) rotate(720deg); opacity: 0; } }
+.confetti-piece { position: absolute; width: 10px; height: 10px; animation: confetti-fall 2.5s linear infinite; }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#faf8ff","on-surface":"#0d1a39","secondary-container":"#fdd259","primary":"#1550d3","secondary":"#755b00","inverse-surface":"#232f4f","on-background":"#0d1a39","on-primary-fixed-variant":"#003cad","primary-shade":"#335FE6","inverse-on-surface":"#eef0ff","primary-fixed":"#dce1ff","surface-tint":"#1a53d6","surface-bright":"#faf8ff","on-error":"#ffffff","surface-container-high":"#e2e7ff","canvas-bg":"#F5F7FF","coral-shade":"#E06852","on-error-container":"#93000a","on-tertiary":"#ffffff","tertiary-fixed-dim":"#63dbb2","mint-shade":"#43B990","purple-shade":"#8B67EB","locked-gray":"#D1D8E8","yellow-shade":"#E0B32E","on-secondary":"#ffffff","surface-container-highest":"#dae2ff","error":"#ba1a1a","outline-variant":"#c3c5d7","soft-purple":"#A78BFA","on-tertiary-container":"#f5fff8","tertiary-container":"#008565","outline":"#737686","surface-container":"#eaedff","secondary-fixed":"#ffe08f","inverse-primary":"#b5c4ff","surface-container-low":"#f2f3ff","on-tertiary-fixed-variant":"#00513d","on-primary-fixed":"#00164d","card-stroke":"#E1E7FC","coral-accent":"#FF8B75","on-tertiary-fixed":"#002117","on-secondary-fixed-variant":"#584400","on-surface-variant":"#434654","surface":"#faf8ff","primary-fixed-dim":"#b5c4ff","tertiary-fixed":"#81f8ce","on-secondary-container":"#735a00","secondary-fixed-dim":"#ebc24a","on-secondary-fixed":"#241a00","on-primary-container":"#fffbff","tertiary":"#00694f","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-white":"#FFFFFF","primary-container":"#3c6bed","surface-variant":"#dae2ff","surface-dim":"#ced9ff","locked-text":"#8F9CB7","on-primary":"#ffffff"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","gutter-mobile":"0.75rem","space-xs":"0.25rem","margin":"2rem","margin-mobile":"1rem","gutter":"1.25rem","space-sm":"0.5rem","space-md":"1rem","space-xl":"2.5rem"},"fontFamily":{"headline-xl-mobile":["Quicksand"],"label-caption":["Nunito Sans"],"headline-sm":["Quicksand"],"label-code-block":["Space Grotesk"],"headline-md":["Quicksand"],"headline-xl":["Quicksand"],"body-lg":["Nunito Sans"],"headline-lg":["Quicksand"],"headline-lg-mobile":["Quicksand"],"body-sm":["Nunito Sans"],"label-badge":["Nunito Sans"],"body-md":["Nunito Sans"]},"fontSize":{"headline-xl-mobile":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-caption":["12px",{"lineHeight":"16px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"700"}],"label-code-block":["16px",{"lineHeight":"20px","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-xl":["44px",{"lineHeight":"52px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"label-badge":["13px",{"lineHeight":"16px","fontWeight":"800"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"600"}]}}}}</script></head><body class="bg-canvas-bg font-body-md text-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-primary"><header class="fixed top-0 w-full z-50 bg-surface-white/95 backdrop-blur-md shadow-[0_4px_0_#D3DBF4]"><div class="w-full px-margin flex items-center justify-between gap-space-md h-16"><div class="flex items-center gap-space-md flex-shrink-0"><img alt="CodeQuest Kids Mascot Logo" class="h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2QLuMkeShXOON05nyH1VQ29eVcF_w3yRoRa5t6pcrEmeYSSFgrDiRgb_8hCVr0jCrYzgxIg1eGkGpheP8EDk8y75-uR1BOkuHy70Z-H_lxXmhwLK8IwRmeFa0Hop2eVnqhwNcTmRJzmUMslyJK5A35V9fGVv4G1PPm6lTJMAeuGufeTQ-MZzBgjUJEp5NUVbpge0Hxjmg_5_5luXBHg2bMwgoCTVR2w7QzBe4_qRsiQJ0qSlsYSwigQ"/><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none font-bold">CodeQuest Kids</span><span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-surface-container text-primary-shade font-label-code-block">| M-ONE 2026</span></div><span class="font-label-caption text-label-caption text-on-surface-variant hidden sm:inline-block mt-0.5">Belajar Coding, Taklukkan Tantangan!</span></div></div><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-full border border-card-stroke"><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">Peta Belajar</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm bg-primary text-on-primary font-bold shadow-[0_3px_0_#003CAD] transition-all" href="#">Tantangan Coding</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">Progress Belajar</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">Koleksi Badge</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="#">Mini Proyek</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden md:flex items-center gap-space-xs"><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-white rounded-full border border-card-stroke shadow-[0_2px_0_#D3DBF4]"><span class="material-symbols-outlined text-coral-shade text-[18px]">local_fire_department</span><span class="font-label-badge text-label-badge text-on-surface">3 Hari</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-white rounded-full border border-card-stroke shadow-[0_2px_0_#D3DBF4]"><span class="material-symbols-outlined text-primary text-[18px]">diamond</span><span class="font-label-badge text-label-badge text-on-surface">450 Permata</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-secondary-container rounded-full border border-yellow-shade shadow-[0_2px_0_#E0B32E]"><span class="material-symbols-outlined text-secondary text-[18px]">hotel_class</span><span class="font-label-badge text-label-badge text-on-secondary-container font-extrabold">750 XP</span></div></div><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full border border-card-stroke"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-sm shadow-sm">R</div><div class="hidden lg:flex flex-col text-left pr-space-xs"><span class="font-label-badge text-label-badge text-on-surface leading-tight font-bold">Raka</span><span class="font-label-caption text-[11px] text-on-surface-variant leading-tight">Kelas 4 SD</span></div></div></div></div></header><main class="w-full bg-canvas-bg min-h-screen flex flex-col justify-between pt-16 pb-3"><div class="flex flex-col w-full relative">
+<!-- Underlying Mission 2 Game Screen Simulation -->
+<div class="w-full max-w-[1400px] mx-auto px-margin-mobile md:px-margin py-4 flex flex-col gap-4 filter blur-[1.5px] select-none pointer-events-none opacity-85">
+<!-- Top Mission Breadcrumb & Stat Banner -->
+<div class="w-full flex flex-wrap items-center justify-between gap-3 bg-surface-white p-space-md rounded-2xl shadow-[0_2px_0_#D3DBF4]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-primary flex items-center justify-center text-on-primary shadow-[0_2px_0_#003CAD]">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-badge text-label-badge px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-bold">Misi 2 dari 5</span>
+<span class="font-label-caption text-label-caption text-outline">Modul: Sekuensial Algoritma</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Sequence Master: Lintasan Karang Laut</h2>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low shadow-[0_2px_0_#D3DBF4]">
+<span class="material-symbols-outlined text-secondary text-[18px]">hotel_class</span>
+<span class="font-label-badge text-label-badge text-on-surface">Target: (4, 1)</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low shadow-[0_2px_0_#D3DBF4]">
+<span class="material-symbols-outlined text-mint-shade text-[18px]">navigation</span>
+<span class="font-label-badge text-label-badge text-on-surface">Start: (1, 3)</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split: 7 Cols Grid Stage, 5 Cols Code Queue -->
+<div class="grid grid-cols-12 gap-4">
+<!-- Left: 5x5 Grid Canvas -->
+<div class="col-span-12 xl:col-span-7 bg-surface-white p-space-lg rounded-3xl shadow-[0_2px_0_#D3DBF4] flex flex-col items-center justify-center relative">
+<div class="w-full max-w-[440px] aspect-square grid grid-cols-5 gap-2 p-3 bg-surface-container-low rounded-2xl">
+<!-- Row 1 -->
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">1,1</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">2,1</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">3,1</span>
+</div>
+<!-- Target Star at (4,1) -->
+<div class="rounded-xl bg-secondary-container relative flex flex-col items-center justify-center shadow-[0_2px_0_#E0B32E]">
+<span class="material-symbols-outlined text-secondary text-[28px] animate-bounce-gentle">star</span>
+<span class="absolute bottom-1 right-1.5 text-[9px] font-bold text-on-secondary-container">4,1</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">5,1</span>
+</div>
+<!-- Row 2 -->
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">1,2</span>
+</div>
+<!-- Karang Runcing at (2,2) -->
+<div class="rounded-xl bg-error-container relative flex flex-col items-center justify-center text-on-error-container shadow-[0_2px_0_#E06852]">
+<span class="material-symbols-outlined text-[24px]">landscape</span>
+<span class="text-[9px] font-bold">Karang</span>
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-70">2,2</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">3,2</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">4,2</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">5,2</span>
+</div>
+<!-- Row 3 -->
+<!-- Robot Start at (1,3) -->
+<div class="rounded-xl bg-primary-fixed relative flex items-center justify-center shadow-[0_2px_0_#335FE6]">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-md">
+<span class="material-symbols-outlined text-[22px]">smart_toy</span>
+</div>
+<span class="absolute bottom-1 right-1.5 text-[9px] font-bold text-primary">1,3</span>
+</div>
+<!-- Batu Karang at (2,3) -->
+<div class="rounded-xl bg-error-container relative flex flex-col items-center justify-center text-on-error-container shadow-[0_2px_0_#E06852]">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+<span class="text-[9px] font-bold">Batu</span>
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-70">2,3</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">3,3</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">4,3</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">5,3</span>
+</div>
+<!-- Row 4 -->
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">1,4</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">2,4</span>
+</div>
+<!-- Rawa Air at (3,4) -->
+<div class="rounded-xl bg-surface-dim relative flex flex-col items-center justify-center text-primary shadow-[0_2px_0_#8B67EB]">
+<span class="material-symbols-outlined text-[24px]">water</span>
+<span class="text-[9px] font-bold">Rawa</span>
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-70">3,4</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">4,4</span>
+</div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm">
+<span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">5,4</span>
+</div>
+<!-- Row 5 -->
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm"><span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">1,5</span></div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm"><span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">2,5</span></div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm"><span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">3,5</span></div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm"><span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">4,5</span></div>
+<div class="rounded-xl bg-surface-white relative flex items-center justify-center text-xs text-outline font-label-code-block shadow-sm"><span class="absolute bottom-1 right-1.5 text-[9px] opacity-40">5,5</span></div>
+</div>
+</div>
+<!-- Right: Command Blocks & Sequence Panel Preview -->
+<div class="col-span-12 xl:col-span-5 flex flex-col gap-3">
+<div class="bg-surface-white p-space-md rounded-2xl shadow-[0_2px_0_#D3DBF4]">
+<h3 class="font-label-badge text-label-badge text-on-surface mb-2">Palet Blok Perintah</h3>
+<div class="flex gap-2">
+<span class="flex-1 py-2 px-3 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-xs font-bold text-center">🟢 MAJU</span>
+<span class="flex-1 py-2 px-3 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-badge text-xs font-bold text-center">🔵 KIRI</span>
+<span class="flex-1 py-2 px-3 rounded-xl bg-coral-accent/20 text-coral-shade font-label-badge text-xs font-bold text-center">🟠 KANAN</span>
+</div>
+</div>
+<div class="bg-surface-white p-space-md rounded-2xl shadow-[0_2px_0_#D3DBF4] flex-1 min-h-[220px]">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-badge text-label-badge text-on-surface">Urutan Instruksimu</span>
+<span class="font-label-caption text-label-caption text-outline">7 / 8 Blok</span>
+</div>
+<div class="space-y-1.5">
+<div class="p-2 rounded-xl bg-surface-container-low flex items-center justify-between text-xs"><span>1. BELOK KIRI (90°)</span></div>
+<div class="p-2 rounded-xl bg-surface-container-low flex items-center justify-between text-xs"><span>2. MAJU 1 LANGKAH</span></div>
+<div class="p-2 rounded-xl bg-surface-container-low flex items-center justify-between text-xs"><span>3. MAJU 1 LANGKAH</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Backdrop Overlay (Subtle, readable backdrop blur matching SCREEN_2, SCREEN_4, SCREEN_10) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto transition-opacity duration-300" id="hint-overlay">
+<!-- Modal Card (Max width 560px, rounded-3xl, tactile styling) -->
+<div class="relative w-full max-w-[560px] bg-surface-white rounded-3xl p-5 sm:p-7 shadow-[0_12px_32px_rgba(13,26,57,0.25)] flex flex-col gap-4 my-auto transform transition-transform duration-300">
+<!-- Close Button Top Right -->
+<button aria-label="Tutup Panduan" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-all cursor-pointer shadow-[0_2px_0_#D3DBF4] active:translate-y-0.5" onclick="dismissHintModal()">
+<span class="material-symbols-outlined text-[20px] font-bold leading-none">close</span>
+</button>
+<!-- Modal Header Section -->
+<div class="flex flex-col items-center text-center pt-1">
+<!-- Badge Pill -->
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-secondary-container shadow-[0_2px_0_#E0B32E] mb-2.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">lightbulb</span>
+<span class="font-label-badge text-[12px] text-on-secondary-container font-extrabold uppercase tracking-wide">PANDUAN LOGIKA &amp; URUTAN MISI 2</span>
+</div>
+<!-- Mascot Illustration & Glowing Sparkles -->
+<div class="relative w-24 h-24 mb-2 flex items-center justify-center">
+<!-- Ambient Radial Aura -->
+<div class="absolute inset-0 rounded-full bg-secondary-fixed/40 blur-md"></div>
+<img class="w-20 h-20 object-contain relative z-10 drop-shadow-md animate-bounce-gentle" data-alt="Cute friendly robot mascot named Kiko wearing playful round professor glasses and cheerfully holding a glowing yellow lightbulb in hand. The robot is stylized in modern rounded 3D toy aesthetics with clean cyan, royal blue, and golden yellow accents, surrounded by joyful floating coding sparkle stars, set against a crisp white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_dVdVtcfMIdFMKGzcRkAqBdkKNUIybdLngATD_HYFbalxS5sXnfIsacskom_lciKnO_Eg-DAInvQOqvDivTXpKuufauarbBBN1b4-Xm3jzk0vzvT5iyIIrVfBCX5bR0jXj18VR547jtTmFcz9P5DkCucmqbs-PEXQDSqOZYD_tdpE7HeexJm6g8DmEzEslyqmdKPOU_XN0fQuQhTbuoMtI_2Ng-NRAm28x0PvsB1WTw-YMYZ74FzBow"/>
+<!-- Decorative Stars -->
+<span class="material-symbols-outlined absolute -top-1 -right-1 text-secondary text-[20px] animate-pulse">arrow_back_ios_new</span>
+<span class="material-symbols-outlined absolute bottom-2 -left-2 text-primary-shade text-[18px]">star</span>
+</div>
+<!-- Headline & Supporting Message -->
+<h2 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">
+          Yuk, Susun Urutannya! 💡🤖
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[460px] mt-1 leading-snug">
+          Robot membutuhkan <span class="font-bold text-primary">urutan perintah yang tepat</span> untuk mencapai tujuan. Komputer membaca instruksimu persis langkah demi langkah!
+        </p>
+</div>
+<!-- Instructional Section: Kamus Perintah Robot Kiko -->
+<div class="bg-surface-container-low rounded-2xl p-3.5 sm:p-4 flex flex-col gap-2.5 shadow-[0_2px_0_#D3DBF4]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+<span class="font-label-badge text-label-badge text-on-surface font-extrabold">📖 Kamus Perintah Robot Kiko</span>
+</div>
+<span class="font-label-caption text-[11px] text-primary font-bold px-2 py-0.5 rounded-full bg-primary-fixed">Balok Dasar</span>
+</div>
+<div class="grid grid-cols-1 gap-2 text-left">
+<!-- Command 1: MAJU -->
+<div class="flex items-start gap-2.5 p-2 rounded-xl bg-surface-white shadow-sm">
+<div class="flex-shrink-0 px-2 py-1 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-1 font-label-badge text-[11px] font-extrabold shadow-[0_2px_0_#43B990]">
+<span class="material-symbols-outlined text-[15px]">arrow_upward</span>
+<span>MAJU</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-badge text-[12px] text-on-surface block leading-tight font-bold">Maju 1 Petak</span>
+<p class="font-label-caption text-[11px] text-on-surface-variant leading-tight mt-0.5">
+                Membuat robot melangkah maju 1 petak lurus ke arah yang sedang ia hadapi.
+              </p>
+</div>
+</div>
+<!-- Command 2: BELOK KIRI -->
+<div class="flex items-start gap-2.5 p-2 rounded-xl bg-surface-white shadow-sm">
+<div class="flex-shrink-0 px-2 py-1 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center gap-1 font-label-badge text-[11px] font-extrabold shadow-[0_2px_0_#335FE6]">
+<span class="material-symbols-outlined text-[15px]">turn_left</span>
+<span>BELOK KIRI</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-badge text-[12px] text-on-surface block leading-tight font-bold">Putar 90° Kiri</span>
+<p class="font-label-caption text-[11px] text-on-surface-variant leading-tight mt-0.5">
+                Memutar badan robot 90° berlawanan arah jarum jam (posisi tetap di petak yang sama).
+              </p>
+</div>
+</div>
+<!-- Command 3: BELOK KANAN -->
+<div class="flex items-start gap-2.5 p-2 rounded-xl bg-surface-white shadow-sm">
+<div class="flex-shrink-0 px-2 py-1 rounded-lg bg-coral-accent/25 text-coral-shade flex items-center gap-1 font-label-badge text-[11px] font-extrabold shadow-[0_2px_0_#E06852]">
+<span class="material-symbols-outlined text-[15px]">turn_right</span>
+<span>BELOK KANAN</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-badge text-[12px] text-on-surface block leading-tight font-bold">Putar 90° Kanan</span>
+<p class="font-label-caption text-[11px] text-on-surface-variant leading-tight mt-0.5">
+                Memutar badan robot 90° searah jarum jam (posisi tetap di petak yang sama).
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Pedagogical Strategy Tip & Sequencing Visualizer -->
+<div class="bg-secondary-fixed/30 rounded-2xl p-3.5 sm:p-4 flex flex-col gap-2 shadow-[0_2px_0_#E0B32E]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">psychology</span>
+<h4 class="font-label-badge text-label-badge text-on-secondary-container font-extrabold">
+            ✨ Tips Rahasia Sequence Master
+          </h4>
+</div>
+<p class="font-body-sm text-[13px] text-on-surface-variant leading-snug">
+          Urutan perintah itu sangat penting! Perhatikan posisi awal dan <span class="font-bold text-on-surface">arah hadap robot</span>. Tentukan kapan robot harus berbelok dulu sebelum melangkah agar tidak menabrak batu karang di depanmu!
+        </p>
+<!-- Visual Sequencing Chain Concept (Non-spoiler educational concept) -->
+<div class="mt-1 pt-2 bg-surface-white/80 rounded-xl p-2.5 flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caption text-[11px] font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">route</span> Contoh Urutan Logika Berbelok:
+            </span>
+<span class="font-label-caption text-[10px] text-outline font-semibold">1 Perintah = 1 Aksi</span>
+</div>
+<!-- Tactile Horizontal Pill Chain -->
+<div class="flex flex-wrap items-center gap-1.5 justify-center py-1">
+<!-- Step 1 -->
+<div class="flex items-center gap-1 bg-primary-fixed px-2 py-1 rounded-lg shadow-sm">
+<span class="w-4 h-4 rounded-full bg-primary text-on-primary font-label-code-block text-[9px] flex items-center justify-center font-bold">1</span>
+<span class="font-label-badge text-[10px] text-on-primary-fixed font-bold">KIRI ↺</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<!-- Step 2 -->
+<div class="flex items-center gap-1 bg-tertiary-fixed px-2 py-1 rounded-lg shadow-sm">
+<span class="w-4 h-4 rounded-full bg-tertiary text-on-tertiary font-label-code-block text-[9px] flex items-center justify-center font-bold">2</span>
+<span class="font-label-badge text-[10px] text-on-tertiary-fixed font-bold">MAJU ⬆</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<!-- Step 3 -->
+<div class="flex items-center gap-1 bg-tertiary-fixed px-2 py-1 rounded-lg shadow-sm">
+<span class="w-4 h-4 rounded-full bg-tertiary text-on-tertiary font-label-code-block text-[9px] flex items-center justify-center font-bold">3</span>
+<span class="font-label-badge text-[10px] text-on-tertiary-fixed font-bold">MAJU ⬆</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<!-- Step 4 -->
+<div class="flex items-center gap-1 bg-coral-accent/25 px-2 py-1 rounded-lg shadow-sm">
+<span class="w-4 h-4 rounded-full bg-coral-shade text-on-error font-label-code-block text-[9px] flex items-center justify-center font-bold">4</span>
+<span class="font-label-badge text-[10px] text-coral-shade font-bold">KANAN ↻</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<!-- Goal Achievement Pill -->
+<div class="flex items-center gap-1 bg-secondary-container px-2 py-1 rounded-lg shadow-[0_2px_0_#E0B32E]">
+<span class="material-symbols-outlined text-secondary text-[12px]">star</span>
+<span class="font-label-badge text-[10px] text-on-secondary-container font-extrabold">Capai Target!</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons Row (Non-destructive to student's existing code) -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center gap-2.5">
+<!-- Secondary Action: Coba Sendiri -->
+<button class="py-3 px-4 rounded-2xl bg-surface-container hover:bg-surface-container-high text-primary font-headline-sm text-sm font-bold shadow-[0_3px_0_#D3DBF4] active:translate-y-0.5 transition cursor-pointer flex items-center justify-center gap-1.5 flex-initial" onclick="dismissHintModal()">
+<span>Coba Sendiri</span>
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<!-- Primary CTA Action: Mengerti, Lanjut! -->
+<button class="flex-1 py-3 px-6 rounded-2xl bg-primary hover:bg-primary-shade text-on-primary font-headline-sm text-base font-extrabold shadow-[0_4px_0_#003CAD] active:translate-y-1 transition cursor-pointer flex items-center justify-center gap-2" onclick="dismissHintModal()">
+<span>Mengerti, Lanjut!</span>
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+</button>
+</div>
+<!-- Safe State Notice -->
+<p class="font-label-caption text-[11px] text-outline text-center flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-mint-shade text-[14px]">verified</span>
+          Susunan blok kodemu saat ini tetap tersimpan aman di papan kerja 👍
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function dismissHintModal() {
+    const overlay = document.getElementById('hint-overlay');
+    if (overlay) {
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        // Keeps modal non-destructive while returning child coder to Mission 2
+        overlay.style.display = 'none';
+        if (typeof showHintModal === 'function') {
+          // Sync with parent shell controller if present
+        }
+      }, 250);
+    }
+  }
+
+  // Keyboard accessibility: ESC closes modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dismissHintModal();
+    }
+  });
+</script></main><nav class="fixed bottom-0 left-0 right-0 h-16 bg-surface-white border-t border-card-stroke shadow-[0_-4px_0_#E1E7FC] z-50 flex items-center justify-around px-gutter-mobile xl:hidden"><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" href="#"><span class="material-symbols-outlined text-[20px]">map</span><span class="font-label-caption text-label-caption">Peta</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-primary font-bold" href="#"><span class="material-symbols-outlined text-[20px]">sports_esports</span><span class="font-label-caption text-label-caption">Tantangan</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="font-label-caption text-label-caption">Progress</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" href="#"><span class="material-symbols-outlined text-[20px]">military_tech</span><span class="font-label-caption text-label-caption">Badge</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" href="#"><span class="material-symbols-outlined text-[20px]">rocket_launch</span><span class="font-label-caption text-label-caption">Proyek</span></a></nav><footer class="hidden md:block w-full bg-surface-white border-t border-card-stroke py-2.5"><div class="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin flex flex-col sm:flex-row items-center justify-between gap-2"><div class="flex items-center gap-2"><span class="font-headline-sm text-sm text-primary font-extrabold">CodeQuest Kids</span><span class="font-body-sm text-xs text-on-surface-variant">— Petualangan Logika &amp; Masa Depan</span></div><p class="font-label-caption text-[11px] text-on-surface-variant font-medium">© 2026 CodeQuest Kids • M-ONE Telkomsel Coding Competition. Hak Cipta Dilindungi.</p></div></footer>
+<!-- Interactive Game Engine JavaScript -->
+<script>
+// Game State
+const INITIAL_X = 1;
+const INITIAL_Y = 3;
+const INITIAL_ANGLE = 0; // 0 = East, 90 = South, 180 = West, 270 = North
+const TARGET_X = 4;
+const TARGET_Y = 1;
+const MAX_BLOCKS = 8;
+
+const OBSTACLES = [
+  { x: 2, y: 3, name: "Batu Karang Besar", tip: "Kiko menabrak Batu Karang di (2, 3) karena melaju lurus ke Timur! Coba belok kiri terlebih dahulu ke arah Utara." },
+  { x: 2, y: 2, name: "Batu Karang Runcing", tip: "Kiko membentur Karang Runcing di (2, 2)! Pastikan robot naik terus ke baris paling atas (Y:1) sebelum berbelok ke timur." },
+  { x: 3, y: 4, name: "Rawa Air", tip: "Robot Kiko terperosok ke dalam Rawa Air di (3, 4)! Hindari melangkah ke arah Selatan di baris 4." }
+];
+
+let robot = {
+  x: INITIAL_X,
+  y: INITIAL_Y,
+  angle: INITIAL_ANGLE
+};
+
+// Initial sequence solution ready for child exploration
+let commandQueue = [
+  'TURN_LEFT',
+  'FORWARD',
+  'FORWARD',
+  'TURN_RIGHT',
+  'FORWARD',
+  'FORWARD',
+  'FORWARD'
+];
+
+let visitedCells = [];
+let isRunning = false;
+let currentStepIndex = -1;
+let sfxEnabled = true;
+
+const DIRECTIONS = {
+  0: 'Timur (▶ 0°)',
+  90: 'Selatan (▼ 90°)',
+  180: 'Barat (◀ 180°)',
+  270: 'Utara (▲ 270°)'
+};
+
+function init() {
+  renderQueue();
+  updatePythonPreview();
+  updateRobotPositionUI();
+  updateProgressUI(0, commandQueue.length);
+}
+
+function updateProgressUI(current, total) {
+  const progressBar = document.getElementById('exec-progress-bar');
+  const stepStatus = document.getElementById('exec-step-status');
+  if (progressBar && stepStatus) {
+    const percent = total > 0 ? Math.round((current / total) * 100) : 0;
+    progressBar.style.width = `${percent}%`;
+    stepStatus.textContent = total > 0 && current > 0 ? `Langkah ${current} dari ${total} (${percent}%)` : `Siap di Start (${robot.x},${robot.y})`;
+  }
+}
+
+function renderQueue() {
+  const container = document.getElementById('queue-list');
+  const badge = document.getElementById('queue-capacity-badge');
+  badge.textContent = `${commandQueue.length} / ${MAX_BLOCKS} Blok Digunakan`;
+
+  if (commandQueue.length === 0) {
+    container.innerHTML = `
+      <div class="p-4 text-center text-outline text-xs border border-dashed border-card-stroke rounded-xl bg-surface-white">
+        Belum ada perintah. Klik balok pada Palet di atas untuk menyusun algoritma!
+      </div>
+    `;
+    return;
+  }
+
+  let html = '';
+  commandQueue.forEach((cmd, idx) => {
+    let title = '';
+    let subtitle = '';
+    let icon = '';
+    let styleClasses = '';
+
+    if (cmd === 'FORWARD') {
+      title = 'MAJU 1 LANGKAH';
+      subtitle = 'Melangkah 1 petak lurus';
+      icon = 'arrow_upward';
+      styleClasses = 'bg-tertiary-fixed text-on-tertiary-fixed border-mint-shade';
+    } else if (cmd === 'TURN_LEFT') {
+      title = 'BELOK KIRI (90°)';
+      subtitle = 'Putar 90° berlawanan jarum jam';
+      icon = 'turn_left';
+      styleClasses = 'bg-primary-fixed text-on-primary-fixed border-primary-shade';
+    } else if (cmd === 'TURN_RIGHT') {
+      title = 'BELOK KANAN (90°)';
+      subtitle = 'Putar 90° searah jarum jam';
+      icon = 'turn_right';
+      styleClasses = 'bg-coral-accent/20 text-coral-shade border-coral-shade';
+    }
+
+    const isExecuting = currentStepIndex === idx;
+
+    html += `
+      <div id="queue-item-${idx}" class="flex items-center justify-between p-2 rounded-xl bg-surface-white shadow-[0_2px_0_#D3DBF4] transition-all border border-card-stroke ${isExecuting ? 'command-executing ring-2 ring-primary' : 'hover:translate-x-0.5'}">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full ${isExecuting ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface'} font-label-code-block text-[10px] font-bold flex items-center justify-center">${idx + 1}</span>
+          <div class="px-2.5 py-1 rounded-lg ${styleClasses} flex items-center gap-1.5 font-label-badge text-xs font-bold border-b">
+            <span class="material-symbols-outlined text-[15px]">${icon}</span>
+            <div class="text-left">
+              <span class="block leading-tight font-extrabold">${title}</span>
+              <span class="text-[9px] opacity-80 block font-normal">${subtitle}</span>
+            </div>
+          </div>
+        </div>
+        ${!isRunning ? `
+        <button onclick="removeCommand(${idx})" class="w-6 h-6 rounded-full hover:bg-error-container/30 text-outline hover:text-error flex items-center justify-center transition" title="Hapus Blok">
+          <span class="material-symbols-outlined text-[15px]">close</span>
+        </button>
+        ` : `
+        <span class="material-symbols-outlined text-primary text-[18px] animate-spin ${isExecuting ? 'block' : 'hidden'}">sync</span>
+        `}
+      </div>
+    `;
+  });
+
+  if (commandQueue.length < MAX_BLOCKS) {
+    const remaining = MAX_BLOCKS - commandQueue.length;
+    html += `
+      <div class="p-1.5 rounded-lg border border-dashed border-card-stroke text-outline text-center font-label-caption text-[11px] flex items-center justify-center gap-1">
+        <span class="material-symbols-outlined text-[13px]">add</span> Slot Perintah Kosong (${remaining} slot tersisa)
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
+}
+
+function updatePythonPreview() {
+  const preview = document.getElementById('python-code-content');
+  let py = `from codequest import Robot\n\nkiko = Robot(name="Kiko", start=(1, 3), heading="EAST")\n\n# Eksekusi Sekuensial Misi 2:\n`;
+  if (commandQueue.length === 0) {
+    py += `# (Tambahkan perintah pada blok visual di sebelah kiri)`;
+  } else {
+    commandQueue.forEach(cmd => {
+      if (cmd === 'FORWARD') py += `kiko.move_forward()\n`;
+      if (cmd === 'TURN_LEFT') py += `kiko.turn_left()\n`;
+      if (cmd === 'TURN_RIGHT') py += `kiko.turn_right()\n`;
+    });
+  }
+  preview.textContent = py;
+}
+
+function addCommand(cmd) {
+  if (isRunning) return;
+  if (commandQueue.length >= MAX_BLOCKS) {
+    alert("Kapasitas blok maksimum telah tercapai (8 blok)!");
+    return;
+  }
+  commandQueue.push(cmd);
+  renderQueue();
+  updatePythonPreview();
+}
+
+function removeCommand(index) {
+  if (isRunning) return;
+  commandQueue.splice(index, 1);
+  renderQueue();
+  updatePythonPreview();
+}
+
+function clearSequence() {
+  if (isRunning) return;
+  commandQueue = [];
+  renderQueue();
+  updatePythonPreview();
+}
+
+function clearBreadcrumbs() {
+  document.querySelectorAll('.trail-mark').forEach(el => el.remove());
+  visitedCells = [];
+}
+
+function dropBreadcrumb(x, y) {
+  const cellId = `cell-${x}-${y}`;
+  const cell = document.getElementById(cellId);
+  if (!cell || cellId === 'cell-4-1') return;
+
+  // Don't add duplicate trail mark in same cell
+  if (cell.querySelector('.trail-mark')) return;
+
+  const mark = document.createElement('div');
+  mark.className = 'trail-mark absolute top-1 right-1 w-4 h-4 rounded-full bg-mint-shade/20 border border-mint-shade flex items-center justify-center text-[10px] text-mint-shade font-bold animate-pulse pointer-events-none';
+  mark.innerHTML = '<span class="material-symbols-outlined text-[11px]">check</span>';
+  cell.appendChild(mark);
+  visitedCells.push({ x, y });
+}
+
+function updateRobotPositionUI() {
+  const currentCellId = `cell-${robot.x}-${robot.y}`;
+  const cell = document.getElementById(currentCellId);
+  const robotEl = document.getElementById('kiko-robot');
+
+  if (cell && robotEl) {
+    cell.appendChild(robotEl);
+    robotEl.style.transform = `rotate(${robot.angle}deg)`;
+    dropBreadcrumb(robot.x, robot.y);
+  }
+
+  // Update Telemetry Display
+  const posDisplay = document.getElementById('pos-display');
+  const headingIndicator = document.getElementById('heading-indicator');
+  const stepCounter = document.getElementById('step-counter');
+
+  if (posDisplay) posDisplay.textContent = `X: ${robot.x}, Y: ${robot.y}`;
+  if (headingIndicator) headingIndicator.textContent = `Arah: ${DIRECTIONS[robot.angle] || 'Timur'}`;
+  if (stepCounter) stepCounter.textContent = `${Math.max(0, currentStepIndex + 1)} / ${commandQueue.length}`;
+}
+
+function executeSingleCommand(cmd) {
+  if (cmd === 'TURN_LEFT') {
+    robot.angle = (robot.angle - 90 + 360) % 360;
+    return { success: true, message: `Kiko berbelok 90° ke kiri! Sekarang menghadap ${DIRECTIONS[robot.angle]}.` };
+  } else if (cmd === 'TURN_RIGHT') {
+    robot.angle = (robot.angle + 90) % 360;
+    return { success: true, message: `Kiko berbelok 90° ke kanan! Sekarang menghadap ${DIRECTIONS[robot.angle]}.` };
+  } else if (cmd === 'FORWARD') {
+    let nextX = robot.x;
+    let nextY = robot.y;
+
+    if (robot.angle === 0) nextX += 1;       // East
+    else if (robot.angle === 90) nextY += 1;  // South
+    else if (robot.angle === 180) nextX -= 1; // West
+    else if (robot.angle === 270) nextY -= 1; // North
+
+    // Boundary check 5x5
+    if (nextX < 1 || nextX > 5 || nextY < 1 || nextY > 5) {
+      return { 
+        success: false, 
+        reason: `Robot Kiko membentur dinding pembatas arena di luar koordinat (X:${nextX}, Y:${nextY})!`,
+        tip: "Periksa kembali jumlah balok MAJU agar robot tidak keluar dari area papan 5x5."
+      };
+    }
+
+    // Obstacle collision check
+    const hitObstacle = OBSTACLES.find(o => o.x === nextX && o.y === nextY);
+    if (hitObstacle) {
+      return { 
+        success: false, 
+        reason: `Robot Kiko membentur ${hitObstacle.name} di koordinat (${nextX}, ${nextY})!`,
+        tip: hitObstacle.tip
+      };
+    }
+
+    robot.x = nextX;
+    robot.y = nextY;
+    return { success: true, message: `Kiko melangkah maju ke petak (${robot.x}, ${robot.y})!` };
+  }
+
+  return { success: true, message: "Perintah diproses." };
+}
+
+function setControlsDisabled(disabled) {
+  const btnRun = document.getElementById('btn-run');
+  const btnStep = document.getElementById('btn-step');
+  const btnSuccess = document.getElementById('btn-quick-success');
+  const btnRock = document.getElementById('btn-quick-fail-rock');
+  const btnSwamp = document.getElementById('btn-quick-fail-swamp');
+
+  if (disabled) {
+    btnRun.disabled = true;
+    btnRun.classList.add('opacity-75', 'cursor-not-allowed');
+    if (btnStep) btnStep.disabled = true;
+    if (btnSuccess) btnSuccess.disabled = true;
+    if (btnRock) btnRock.disabled = true;
+    if (btnSwamp) btnSwamp.disabled = true;
+  } else {
+    btnRun.disabled = false;
+    btnRun.classList.remove('opacity-75', 'cursor-not-allowed');
+    if (btnStep) btnStep.disabled = false;
+    if (btnSuccess) btnSuccess.disabled = false;
+    if (btnRock) btnRock.disabled = false;
+    if (btnSwamp) btnSwamp.disabled = false;
+  }
+}
+
+async function runSequence() {
+  if (isRunning) return;
+  if (commandQueue.length === 0) {
+    alert("Urutan perintah masih kosong! Klik balok perintah pada Palet terlebih dahulu.");
+    return;
+  }
+
+  resetBoard(false);
+  isRunning = true;
+  setControlsDisabled(true);
+
+  const runBtnText = document.getElementById('btn-run-text');
+  const runBtnIcon = document.getElementById('btn-run-icon');
+  const statusDisplay = document.getElementById('status-display');
+  const mascotDialogue = document.getElementById('mascot-dialogue');
+
+  statusDisplay.textContent = 'Mengeksekusi Langkah ⚡';
+  statusDisplay.className = 'font-label-badge text-xs text-primary font-extrabold animate-pulse';
+
+  for (let i = 0; i < commandQueue.length; i++) {
+    currentStepIndex = i;
+    runBtnText.textContent = `MENJALANKAN... (Langkah ${i + 1}/${commandQueue.length})`;
+    runBtnIcon.textContent = 'autorenew';
+    runBtnIcon.classList.add('animate-spin');
+    
+    renderQueue();
+    updateProgressUI(i + 1, commandQueue.length);
+
+    const cmd = commandQueue[i];
+    const result = executeSingleCommand(cmd);
+    updateRobotPositionUI();
+
+    if (result.message) {
+      mascotDialogue.innerHTML = `"${result.message}"`;
+    }
+
+    await new Promise(res => setTimeout(res, 520));
+
+    if (!result.success) {
+      isRunning = false;
+      setControlsDisabled(false);
+      runBtnText.textContent = '▶ JALANKAN KODE SEKARANG! (RUN)';
+      runBtnIcon.textContent = 'play_circle';
+      runBtnIcon.classList.remove('animate-spin');
+      showFailedModal(result.reason, result.tip);
+      return;
+    }
+  }
+
+  currentStepIndex = -1;
+  renderQueue();
+  isRunning = false;
+  setControlsDisabled(false);
+  runBtnText.textContent = '▶ JALANKAN KODE SEKARANG! (RUN)';
+  runBtnIcon.textContent = 'play_circle';
+  runBtnIcon.classList.remove('animate-spin');
+
+  // Final validation check at Star Target (4, 1)
+  if (robot.x === TARGET_X && robot.y === TARGET_Y) {
+    document.getElementById('star-counter').textContent = '1 / 1 ⭐ Sukses!';
+    statusDisplay.textContent = 'Target Tercapai! 🎉';
+    statusDisplay.className = 'font-label-badge text-xs text-mint-shade font-extrabold';
+    mascotDialogue.innerHTML = `"Horeee! Kiko berhasil mencapai Bintang Emas di (4, 1)! Kamu membuktikan kehebatan algoritma urutan (sequencing)!"`;
+    setTimeout(() => {
+      showClearedModal();
+    }, 450);
+  } else {
+    showFailedModal(
+      `Kiko telah menyelesaikan semua perintah dan berhenti di koordinat (${robot.x}, ${robot.y}), tetapi belum mencapai Bintang Emas di (${TARGET_X}, ${TARGET_Y}).`,
+      "Coba periksa lagi belokanmu dan tambahkan perintah MAJU yang cukup hingga ke koordinat (4,1)!"
+    );
+  }
+}
+
+function stepSequence() {
+  if (isRunning) return;
+  if (commandQueue.length === 0) return;
+
+  if (currentStepIndex === -1 && (robot.x !== INITIAL_X || robot.y !== INITIAL_Y)) {
+    resetBoard(false);
+  }
+
+  currentStepIndex++;
+  if (currentStepIndex >= commandQueue.length) {
+    if (robot.x === TARGET_X && robot.y === TARGET_Y) {
+      document.getElementById('star-counter').textContent = '1 / 1 ⭐';
+      showClearedModal();
+    } else {
+      showFailedModal(
+        `Semua balok instruksi telah dijalankan, namun Kiko berada di (${robot.x}, ${robot.y}) dan belum sampai di Bintang Emas.`,
+        "Coba tambahkan balok MAJU atau periksa belokan yang kamu pilih!"
+      );
+    }
+    currentStepIndex = -1;
+    renderQueue();
+    return;
+  }
+
+  renderQueue();
+  updateProgressUI(currentStepIndex + 1, commandQueue.length);
+  const cmd = commandQueue[currentStepIndex];
+  const result = executeSingleCommand(cmd);
+  updateRobotPositionUI();
+
+  if (result.message) {
+    document.getElementById('mascot-dialogue').innerHTML = `"${result.message}"`;
+  }
+
+  if (!result.success) {
+    showFailedModal(result.reason, result.tip);
+    currentStepIndex = -1;
+    renderQueue();
+  }
+}
+
+function loadScenario(type) {
+  if (isRunning) return;
+
+  if (type === 'success') {
+    commandQueue = [
+      'TURN_LEFT',
+      'FORWARD',
+      'FORWARD',
+      'TURN_RIGHT',
+      'FORWARD',
+      'FORWARD',
+      'FORWARD'
+    ];
+    document.getElementById('mascot-dialogue').innerHTML = `"Memuat skenario Sukses Bintang: Belok Kiri -> Maju 2x -> Belok Kanan -> Maju 3x menuju Bintang Emas (4,1). Tekan Jalankan!"`;
+  } else if (type === 'fail_rock') {
+    // Fails by going straight into rock at (2,3)
+    commandQueue = [
+      'FORWARD'
+    ];
+    document.getElementById('mascot-dialogue').innerHTML = `"Simulasi Error: Kiko langsung melangkah MAJU ke timur tanpa belok, yang akan menabrak Batu Karang Besar di (2,3)!"`;
+  } else if (type === 'fail_swamp') {
+    // Turns right (towards South) then moves forward into swamp (3,4)
+    commandQueue = [
+      'TURN_RIGHT',
+      'FORWARD',
+      'TURN_LEFT',
+      'FORWARD',
+      'FORWARD'
+    ];
+    document.getElementById('mascot-dialogue').innerHTML = `"Simulasi Rawa: Kiko berbelok ke selatan lalu terperosok ke Rawa Air di (3,4)!"`;
+  }
+
+  resetBoard(false);
+  renderQueue();
+  updatePythonPreview();
+
+  // Automatically auto-run for quick demonstration
+  setTimeout(() => {
+    runSequence();
+  }, 300);
+}
+
+function resetBoard(resetToDefault = false) {
+  if (isRunning) return;
+  robot.x = INITIAL_X;
+  robot.y = INITIAL_Y;
+  robot.angle = INITIAL_ANGLE;
+  currentStepIndex = -1;
+
+  if (resetToDefault) {
+    commandQueue = [
+      'TURN_LEFT',
+      'FORWARD',
+      'FORWARD',
+      'TURN_RIGHT',
+      'FORWARD',
+      'FORWARD',
+      'FORWARD'
+    ];
+  }
+
+  clearBreadcrumbs();
+  document.getElementById('star-counter').textContent = '0 / 1 ⭐';
+  document.getElementById('status-display').textContent = 'Siap Jalur 🚀';
+  document.getElementById('status-display').className = 'font-label-badge text-xs text-mint-shade font-extrabold';
+  document.getElementById('mascot-dialogue').innerHTML = `"Halo Coder Cilik! Kiko sudah kembali ke titik Start (1, 3). Susun perintah dan tekan <strong>JALANKAN KODE</strong>!"`;
+
+  updateRobotPositionUI();
+  renderQueue();
+  updatePythonPreview();
+  updateProgressUI(0, commandQueue.length);
+}
+
+function showClearedModal() {
+  document.getElementById('modal-cleared').classList.remove('hidden');
+  document.getElementById('modal-cleared').classList.add('flex');
+}
+
+function showFailedModal(reason, tip) {
+  document.getElementById('fail-reason').textContent = reason || "Kiko membentur rintangan atau urutan instruksi belum sesuai.";
+  if (tip) {
+    document.getElementById('fail-tip').innerHTML = `<strong class="text-on-surface font-bold">Tips Kiko:</strong> ${tip}`;
+  }
+  document.getElementById('status-display').textContent = 'Gagal Mencapai Target ⚠️';
+  document.getElementById('status-display').className = 'font-label-badge text-xs text-error font-extrabold';
+  document.getElementById('modal-failed').classList.remove('hidden');
+  document.getElementById('modal-failed').classList.add('flex');
+}
+
+function retryMission() {
+  document.getElementById('modal-failed').classList.add('hidden');
+  document.getElementById('modal-failed').classList.remove('flex');
+  resetBoard();
+}
+
+function showHintModalFromFail() {
+  document.getElementById('modal-failed').classList.add('hidden');
+  document.getElementById('modal-failed').classList.remove('flex');
+  showHintModal();
+}
+
+function showHintModal() {
+  document.getElementById('modal-hint').classList.remove('hidden');
+  document.getElementById('modal-hint').classList.add('flex');
+}
+
+function closeHintModal() {
+  document.getElementById('modal-hint').classList.add('hidden');
+  document.getElementById('modal-hint').classList.remove('flex');
+}
+
+function closeClearedModal() {
+  document.getElementById('modal-cleared').classList.add('hidden');
+  document.getElementById('modal-cleared').classList.remove('flex');
+  resetBoard();
+}
+
+function goToNextLevel() {
+  alert("🎉 Luar biasa! Kamu membuka Level 3: Perulangan (Loop Adventure)! Selamat melanjutkan petualangan koding!");
+  closeClearedModal();
+}
+
+function toggleAudio() {
+  sfxEnabled = !sfxEnabled;
+  const icon = document.getElementById('sfx-icon');
+  const label = document.getElementById('sfx-label');
+  if (sfxEnabled) {
+    icon.textContent = 'volume_up';
+    label.textContent = 'SFX ON';
+  } else {
+    icon.textContent = 'volume_off';
+    label.textContent = 'SFX OFF';
+  }
+}
+
+function switchTab(type) {
+  const visualTab = document.getElementById('tab-visual');
+  const pythonTab = document.getElementById('tab-python');
+  const queuePanel = document.getElementById('queue-list');
+  const pythonPreview = document.getElementById('python-preview');
+
+  if (type === 'visual') {
+    visualTab.className = 'flex-1 py-1.5 px-3 rounded-full bg-primary-container text-on-primary-container font-label-badge text-xs shadow-[0_2px_0_#335FE6] flex items-center justify-center gap-1.5 transition font-extrabold';
+    pythonTab.className = 'flex-1 py-1.5 px-3 rounded-full text-on-surface-variant hover:text-on-surface font-label-badge text-xs flex items-center justify-center gap-1.5 transition font-bold';
+    queuePanel.classList.remove('hidden');
+    pythonPreview.classList.add('hidden');
+  } else {
+    pythonTab.className = 'flex-1 py-1.5 px-3 rounded-full bg-primary-container text-on-primary-container font-label-badge text-xs shadow-[0_2px_0_#335FE6] flex items-center justify-center gap-1.5 transition font-extrabold';
+    visualTab.className = 'flex-1 py-1.5 px-3 rounded-full text-on-surface-variant hover:text-on-surface font-label-badge text-xs flex items-center justify-center gap-1.5 transition font-bold';
+    queuePanel.classList.add('hidden');
+    pythonPreview.classList.remove('hidden');
+  }
+}
+
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body></html>

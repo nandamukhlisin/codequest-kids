@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800;900&amp;family=Quicksand:wght@600;700&amp;family=JetBrains+Mono:wght@600;700&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+  @layer base {
+    html, body { margin: 0; padding: 0; font-family: 'Quicksand', 'Nunito Sans', sans-serif; }
+    body { overscroll-behavior: none; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  ::-webkit-scrollbar { display: none; }
+  .font-mono-code { font-family: 'JetBrains Mono', monospace; }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+  .shake-anim { animation: shake 0.4s ease-in-out; }
+  @keyframes floatPulse {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-4px) scale(1.05); }
+  }
+  .float-pulse { animation: floatPulse 2s ease-in-out infinite; }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#faf8ff","on-surface":"#0d1a39","secondary-container":"#fdd259","primary":"#1550d3","secondary":"#755b00","inverse-surface":"#232f4f","on-background":"#0d1a39","on-primary-fixed-variant":"#003cad","primary-shade":"#335FE6","inverse-on-surface":"#eef0ff","primary-fixed":"#dce1ff","surface-tint":"#1a53d6","surface-bright":"#faf8ff","on-error":"#ffffff","surface-container-high":"#e2e7ff","canvas-bg":"#F5F7FF","coral-shade":"#E06852","on-error-container":"#93000a","on-tertiary":"#ffffff","tertiary-fixed-dim":"#63dbb2","mint-shade":"#43B990","purple-shade":"#8B67EB","locked-gray":"#D1D8E8","yellow-shade":"#E0B32E","on-secondary":"#ffffff","surface-container-highest":"#dae2ff","error":"#ba1a1a","outline-variant":"#c3c5d7","soft-purple":"#A78BFA","on-tertiary-container":"#f5fff8","tertiary-container":"#008565","outline":"#737686","surface-container":"#eaedff","secondary-fixed":"#ffe08f","inverse-primary":"#b5c4ff","surface-container-low":"#f2f3ff","on-tertiary-fixed-variant":"#00513d","on-primary-fixed":"#00164d","card-stroke":"#E1E7FC","coral-accent":"#FF8B75","on-tertiary-fixed":"#002117","on-secondary-fixed-variant":"#584400","on-surface-variant":"#434654","surface":"#faf8ff","primary-fixed-dim":"#b5c4ff","tertiary-fixed":"#81f8ce","on-secondary-container":"#735a00","secondary-fixed-dim":"#ebc24a","on-secondary-fixed":"#241a00","on-primary-container":"#fffbff","tertiary":"#00694f","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-white":"#FFFFFF","primary-container":"#3c6bed","surface-variant":"#dae2ff","surface-dim":"#ced9ff","locked-text":"#8F9CB7","on-primary":"#ffffff"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","gutter-mobile":"0.75rem","space-xs":"0.25rem","margin":"2rem","margin-mobile":"1rem","gutter":"1.25rem","space-sm":"0.5rem","space-md":"1rem","space-xl":"2.5rem"},"fontFamily":{"headline-xl-mobile":["Quicksand"],"label-caption":["Nunito Sans"],"headline-sm":["Quicksand"],"label-code-block":["JetBrains Mono","monospace"],"headline-md":["Quicksand"],"headline-xl":["Quicksand"],"body-lg":["Nunito Sans"],"headline-lg":["Quicksand"],"headline-lg-mobile":["Quicksand"],"body-sm":["Nunito Sans"],"label-badge":["Nunito Sans"],"body-md":["Nunito Sans"]},"fontSize":{"headline-xl-mobile":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-caption":["12px",{"lineHeight":"16px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"700"}],"label-code-block":["15px",{"lineHeight":"22px","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-xl":["44px",{"lineHeight":"52px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"label-badge":["13px",{"lineHeight":"16px","fontWeight":"800"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"600"}]}}}}</script></head><body class="bg-canvas-bg font-body-md text-body-md text-on-surface antialiased selection:bg-primary-fixed"><header class="fixed top-0 w-full z-40 bg-surface-white/95 backdrop-blur-md shadow-[0_4px_0_#D3DBF4]"><div class="h-14 w-full px-margin flex items-center justify-between gap-space-sm max-w-[1400px] mx-auto"><div class="flex items-center gap-space-sm flex-shrink-0"><img alt="CodeQuest Kids Mascot Logo" class="h-9 w-auto object-contain rounded-lg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2QLuMkeShXOON05nyH1VQ29eVcF_w3yRoRa5t6pcrEmeYSSFgrDiRgb_8hCVr0jCrYzgxIg1eGkGpheP8EDk8y75-uR1BOkuHy70Z-H_lxXmhwLK8IwRmeFa0Hop2eVnqhwNcTmRJzmUMslyJK5A35V9fGVv4G1PPm6lTJMAeuGufeTQ-MZzBgjUJEp5NUVbpge0Hxjmg_5_5luXBHg2bMwgoCTVR2w7QzBe4_qRsiQJ0qSlsYSwigQ"/><div class="flex flex-col"><span class="font-headline-sm text-[17px] text-primary tracking-tight leading-none font-bold">CodeQuest Kids <span class="text-[12px] px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-extrabold uppercase">M-ONE 2026</span></span><span class="font-label-caption text-[11px] text-on-surface-variant hidden sm:inline-block">Belajar Coding, Taklukkan Tantangan!</span></div></div><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low p-1 rounded-full border border-card-stroke"><a class="px-3.5 py-1 rounded-full font-body-sm text-[13px] text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="peta-petualangan" href="#">Peta Belajar</a><a class="px-3.5 py-1 rounded-full font-body-sm text-[13px] bg-primary text-on-primary font-bold shadow-[0_2px_0_#003CAD] transition-all" data-path="tantangan-coding" href="#">Tantangan Coding</a><a class="px-3.5 py-1 rounded-full font-body-sm text-[13px] text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="progress-belajar" href="#">Progress Belajar</a><a class="px-3.5 py-1 rounded-full font-body-sm text-[13px] text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="koleksi-badge" href="#">Koleksi Badge</a><a class="px-3.5 py-1 rounded-full font-body-sm text-[13px] text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="mini-proyek" href="#">Mini Proyek</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden md:flex items-center gap-space-xs"><div class="flex items-center gap-1 px-2.5 py-1 bg-surface-white rounded-full border border-card-stroke shadow-[0_2px_0_#D3DBF4]"><span class="material-symbols-outlined text-coral-shade text-[16px]">local_fire_department</span><span class="font-label-badge text-[12px] text-on-surface">3 Hari</span></div><div class="flex items-center gap-1 px-2.5 py-1 bg-surface-white rounded-full border border-card-stroke shadow-[0_2px_0_#D3DBF4]"><span class="material-symbols-outlined text-primary text-[16px]">diamond</span><span class="font-label-badge text-[12px] text-on-surface">450</span></div><div class="flex items-center gap-1 px-2.5 py-1 bg-secondary-container rounded-full border border-yellow-shade shadow-[0_2px_0_#E0B32E]"><span class="material-symbols-outlined text-secondary text-[16px]">hotel_class</span><span class="font-label-badge text-[12px] text-on-secondary-container">750 XP</span></div></div><div class="flex items-center gap-1.5 bg-surface-container px-2.5 py-1 rounded-full border border-card-stroke"><div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined text-on-primary text-[16px]">person</span></div><div class="hidden lg:flex flex-col text-left pr-1"><span class="font-label-badge text-[12px] text-on-surface leading-tight font-bold">Raka</span><span class="font-label-caption text-[10px] text-on-surface-variant leading-tight">Kelas 4 SD</span></div></div></div></div></header><main class="w-full pt-16 pb-6 bg-canvas-bg min-h-screen"><div class="flex flex-col w-full relative">
+<!-- BREADCRUMB & CONTEXT HEADER (GAMEPLAY STAGE) -->
+<div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin pt-space-sm pb-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:text-primary-shade transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="font-bold">Kembali ke Peta Belajar</span>
+</a>
+<span class="text-locked-gray text-body-sm">/</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Peta Petualangan</span>
+<span class="text-locked-gray text-body-sm">/</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Level 1: Coding Explorer</span>
+<span class="text-locked-gray text-body-sm">/</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Misi 1: Langkah Pertama Robot Kiko</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary-container/10 text-tertiary text-label-badge font-label-badge">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Target Berhasil</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-badge font-label-badge">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Target 3 Blok</span>
+</span>
+</div>
+</div>
+</div>
+<!-- GAMEPLAY CONTENT STAGE (UNDER CELEBRATORY OVERLAY) -->
+<div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin pb-space-lg grid grid-cols-1 xl:grid-cols-12 gap-space-lg select-none opacity-85">
+<!-- LEFT: 4x4 ARENA GRID (7 Columns) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<!-- Arena Panel -->
+<div class="bg-surface-white rounded-lg p-space-md md:p-space-lg shadow-[0_4px_0_#D3DBF4] flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">grid_view</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Grid Logika 4x4</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-caption text-label-caption font-bold">
+            Posisi Akhir Robot: (4, 2)
+          </span>
+</div>
+<!-- 4x4 Visual Matrix -->
+<div class="grid grid-cols-4 gap-3 aspect-square max-w-[480px] w-full mx-auto p-3 rounded-2xl bg-canvas-bg">
+<!-- Row 1: (1,1), (2,1), (3,1), (4,1) -->
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">1,1</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">2,1</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">3,1</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">4,1</span>
+</div>
+<!-- Row 2: (1,2) -> (2,2) -> (3,2) -> (4,2) Target -->
+<!-- Start Pos (1,2) with footprint track -->
+<div class="relative bg-primary-fixed/30 rounded-xl shadow-[0_2px_0_#D3DBF4] flex flex-col items-center justify-center p-2">
+<span class="material-symbols-outlined text-primary-shade text-[20px] opacity-60">flag</span>
+<span class="font-label-caption text-[10px] text-primary-shade font-bold">Mulai</span>
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">1,2</span>
+</div>
+<!-- Step 1 (2,2) with trajectory highlight -->
+<div class="relative bg-primary-fixed/20 rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-shade"></div>
+<div class="absolute h-1 w-full bg-primary-fixed left-0 z-0"></div>
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">2,2</span>
+</div>
+<!-- Step 2 (3,2) with trajectory highlight -->
+<div class="relative bg-primary-fixed/20 rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-shade"></div>
+<div class="absolute h-1 w-full bg-primary-fixed left-0 z-0"></div>
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">3,2</span>
+</div>
+<!-- Target Arrived (4,2): Robot Kiko with Gold Star Trophy -->
+<div class="relative bg-secondary-container/30 rounded-xl shadow-[0_2px_0_#E0B32E] flex flex-col items-center justify-center p-2">
+<div class="w-12 h-12 rounded-full bg-surface-white shadow-[0_2px_0_#E0B32E] flex items-center justify-center relative">
+<span class="material-symbols-outlined text-primary text-[28px]">smart_toy</span>
+<span class="material-symbols-outlined text-secondary absolute -top-1 -right-1 text-[18px]">hotel_class</span>
+</div>
+<span class="font-label-caption text-[10px] text-secondary font-bold mt-1">Selesai!</span>
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">4,2</span>
+</div>
+<!-- Row 3: (1,3), (2,3), (3,3), (4,3) -->
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">1,3</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">2,3</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">3,3</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">4,3</span>
+</div>
+<!-- Row 4: (1,4), (2,4), (3,4), (4,4) -->
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">1,4</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">2,4</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">3,4</span>
+</div>
+<div class="relative bg-surface-white rounded-xl shadow-[0_2px_0_#E1E7FC] flex items-center justify-center p-2">
+<span class="absolute bottom-1 right-1.5 font-label-caption text-[10px] text-locked-text">4,4</span>
+</div>
+</div>
+<!-- Legend Ribbon -->
+<div class="flex items-center justify-center gap-space-md pt-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary-shade"></span>
+<span>Jalur Robot Kiko</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">hotel_class</span>
+<span>Target Bintang Emas</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: WORKSPACE & COMMAND BLOCKS (5 Columns) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<!-- Sequence Tray -->
+<div class="bg-surface-white rounded-lg p-space-md shadow-[0_4px_0_#D3DBF4] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[22px]">playlist_play</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Urutan Program (3/3)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/10 text-tertiary font-label-badge text-[11px] font-extrabold uppercase">Eksekusi Sukses</span>
+</div>
+<!-- Executed Code Blocks -->
+<div class="flex flex-col gap-2">
+<!-- Block 1 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-tertiary-container/10 shadow-[0_2px_0_#43B990]">
+<div class="flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-tertiary-container text-surface-white flex items-center justify-center font-bold text-label-caption">1</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">arrow_forward</span>
+<span class="font-label-code-block text-label-code-block text-tertiary">MAJU (1 PETAK)</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+</div>
+<!-- Block 2 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-tertiary-container/10 shadow-[0_2px_0_#43B990]">
+<div class="flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-tertiary-container text-surface-white flex items-center justify-center font-bold text-label-caption">2</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">arrow_forward</span>
+<span class="font-label-code-block text-label-code-block text-tertiary">MAJU (1 PETAK)</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+</div>
+<!-- Block 3 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-tertiary-container/10 shadow-[0_2px_0_#43B990]">
+<div class="flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-tertiary-container text-surface-white flex items-center justify-center font-bold text-label-caption">3</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">arrow_forward</span>
+<span class="font-label-code-block text-label-code-block text-tertiary">MAJU (1 PETAK)</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+</div>
+</div>
+<!-- Inactive Toolbox Simulation -->
+<div class="pt-space-sm flex flex-col gap-2">
+<span class="font-label-caption text-label-caption text-on-surface-variant font-bold uppercase tracking-wider">Pilihan Blok Perintah</span>
+<div class="grid grid-cols-3 gap-2">
+<div class="p-2.5 rounded-xl bg-surface-container-low text-center opacity-60">
+<span class="material-symbols-outlined text-primary text-[20px] block mx-auto">arrow_upward</span>
+<span class="font-label-caption text-[11px] text-on-surface font-bold">MAJU</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low text-center opacity-60">
+<span class="material-symbols-outlined text-secondary text-[20px] block mx-auto">turn_right</span>
+<span class="font-label-caption text-[11px] text-on-surface font-bold">BELOK KANAN</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low text-center opacity-60">
+<span class="material-symbols-outlined text-coral-shade text-[20px] block mx-auto">turn_left</span>
+<span class="font-label-caption text-[11px] text-on-surface font-bold">BELOK KIRI</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CELEBRATORY SUCCESS MODAL (TACTILE LAYER OVERLAY) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-gutter-mobile md:p-margin bg-inverse-surface/65 backdrop-blur-sm overflow-y-auto">
+<!-- MODAL CARD CONTAINER -->
+<div class="bg-surface-white rounded-lg p-space-md sm:p-space-lg md:p-8 max-w-lg w-full text-center relative shadow-[0_8px_0_#232F4F] flex flex-col items-center my-auto">
+<!-- CONFETTI / STAR ACCENTS (INLINE PURE SVG AMBIENCE) -->
+<svg class="absolute top-3 left-4 w-10 h-10 text-secondary pointer-events-none float-pulse" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"></path>
+</svg>
+<svg class="absolute top-8 right-6 w-8 h-8 text-coral-shade pointer-events-none float-pulse" fill="currentColor" style="animation-delay: 0.5s;" viewbox="0 0 24 24">
+<path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"></path>
+</svg>
+<svg class="absolute bottom-16 left-6 w-6 h-6 text-mint-shade pointer-events-none float-pulse" fill="currentColor" style="animation-delay: 1s;" viewbox="0 0 24 24">
+<path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"></path>
+</svg>
+<svg class="absolute top-1/2 -right-2 w-7 h-7 text-primary-shade pointer-events-none float-pulse" fill="currentColor" style="animation-delay: 1.3s;" viewbox="0 0 24 24">
+<path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"></path>
+</svg>
+<!-- MASCOT HEADER WITH CELEBRATORY ROBOT KIKO -->
+<div class="relative -mt-16 sm:-mt-20 mb-space-xs flex flex-col items-center">
+<!-- Mascot Circular Badge with Extruded Shadow -->
+<div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-surface-white p-1.5 shadow-[0_4px_0_#D3DBF4] flex items-center justify-center relative">
+<img class="w-full h-full object-cover rounded-full bg-surface-container" data-alt="A friendly blue cartoon educational robot mascot named Kiko beaming with joy, proudly holding a shining gold trophy medal and waving enthusiastically. Whimsical 3D digital illustration, rounded cute proportions, clean studio lighting, warm celebratory atmosphere, pastel periwinkle and soft yellow highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs59QgBopIm2jmQq0BP0m-oO2HqiMTqKz-6sc2c9Iy1yD8uEnYwxURaZq9RoeR0_DeO65Ecz4j0YZvnRJCm8-dWLfmnD7gI52dDR0oroWWs4cRDSUxchBKg4tx9BubFH_0pkEVLq3WKGTYcpdCUgEn7YL_sMaxtsiMU-sFAfsD7IqMaEeWgrzNesLCxaYQ3jfmwttWqCPcYycPgBc00HP6SAVTNtGTMBtC4vjct0jI12u5NMLb5XusLg"/>
+<!-- Little Floating Trophy Accent -->
+<div class="absolute -bottom-1 -right-1 w-9 h-9 rounded-full bg-secondary-container shadow-[0_2px_0_#E0B32E] flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+</div>
+<!-- Pill Tag -->
+<span class="mt-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-badge text-label-badge font-extrabold shadow-[0_2px_0_#E0B32E]">
+          Langkah Sempurna!
+        </span>
+</div>
+<!-- CELEBRATORY HEADLINE & MESSAGE -->
+<div class="flex flex-col gap-1 mt-space-xs max-w-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold leading-tight">
+          Hebat! Misi 1 Selesai! 🎉
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium">
+          Kamu berhasil memandu robot ke tujuan dengan urutan perintah yang benar!
+        </p>
+</div>
+<!-- 3-STAR RATING DISPLAY -->
+<div class="flex items-center justify-center gap-2 my-space-md py-1 px-4 rounded-full bg-surface-container-low shadow-[0_2px_0_#D3DBF4]">
+<span class="material-symbols-outlined text-yellow-shade text-[36px] drop-shadow-sm float-pulse" style="font-variation-settings: 'FILL' 1; animation-delay: 0.1s;">star</span>
+<span class="material-symbols-outlined text-yellow-shade text-[44px] -translate-y-1 drop-shadow-sm float-pulse" style="font-variation-settings: 'FILL' 1; animation-delay: 0.25s;">star</span>
+<span class="material-symbols-outlined text-yellow-shade text-[36px] drop-shadow-sm float-pulse" style="font-variation-settings: 'FILL' 1; animation-delay: 0.4s;">star</span>
+</div>
+<!-- REWARD CHIPS SECTION -->
+<div class="w-full grid grid-cols-2 gap-space-sm mb-space-md">
+<!-- XP Reward Card -->
+<div class="flex items-center gap-2 p-3 rounded-2xl bg-secondary-container/25 shadow-[0_2px_0_#E0B32E] text-left">
+<div class="w-9 h-9 rounded-xl bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caption text-[11px] text-on-surface-variant font-bold truncate">Bonus Pengalaman</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-extrabold leading-tight">+100 XP</span>
+</div>
+</div>
+<!-- Gem Reward Card -->
+<div class="flex items-center gap-2 p-3 rounded-2xl bg-mint-shade/20 shadow-[0_2px_0_#43B990] text-left">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[22px]">diamond</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caption text-[11px] text-on-surface-variant font-bold truncate">Permata Koding</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-extrabold leading-tight">+15 Permata</span>
+</div>
+</div>
+</div>
+<!-- COMPACT RESULT SUMMARY CARD -->
+<div class="w-full bg-surface-container-low rounded-2xl p-space-md text-left flex flex-col gap-2 mb-space-lg shadow-[0_2px_0_#E1E7FC]">
+<div class="flex items-center justify-between pb-1 border-b border-card-stroke/50">
+<span class="font-body-sm text-[13px] text-on-surface-variant font-medium">Misi</span>
+<span class="font-body-sm text-[13px] text-on-surface font-bold">Level 1 — Coding Explorer</span>
+</div>
+<div class="flex items-center justify-between pb-1 border-b border-card-stroke/50">
+<span class="font-body-sm text-[13px] text-on-surface-variant font-medium">Status</span>
+<span class="font-body-sm text-[13px] text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Selesai Sempurna (100%)
+          </span>
+</div>
+<div class="flex items-center justify-between pb-1 border-b border-card-stroke/50">
+<span class="font-body-sm text-[13px] text-on-surface-variant font-medium">Perintah Dijalankan</span>
+<span class="font-body-sm text-[13px] text-on-surface font-bold">3 Perintah MAJU (Sesuai Target Efisien)</span>
+</div>
+<div class="flex flex-col pt-0.5">
+<span class="font-body-sm text-[13px] text-on-surface-variant font-medium">Konsep Terlatih:</span>
+<span class="font-body-sm text-[13px] text-primary font-bold">Computational Thinking &amp; Urutan Instruksi Dasar</span>
+</div>
+</div>
+<!-- ACTION BUTTONS (TACTILE 3D AFFORDANCES) -->
+<div class="w-full flex flex-col gap-space-sm">
+<!-- Primary CTA: Lanjut ke Misi 2 -->
+<a class="w-full py-3.5 px-space-md rounded-full bg-tertiary-container hover:bg-tertiary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-[0_4px_0_#43B990] active:translate-y-1 active:shadow-none transition-all" href="#">
+<span>Lanjut ke Misi 2</span>
+<span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+</a>
+<!-- Secondary CTA: Kembali ke Peta Misi -->
+<a class="w-full py-2.5 px-space-md rounded-full bg-surface-white hover:bg-surface-container-low text-on-surface font-body-lg text-body-lg font-bold flex items-center justify-center gap-2 shadow-[0_2px_0_#D3DBF4] active:translate-y-0.5 transition-all" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">map</span>
+<span>Kembali ke Peta Misi</span>
+</a>
+<!-- Subtle Tertiary Action: Mainkan Ulang -->
+<button class="mt-1 py-1 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Mainkan Ulang</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    // Lightweight tactile click sound or action hook can be bound here
+    document.querySelectorAll('a, button').forEach(elem => {
+      elem.addEventListener('click', (e) => {
+        // Keeps user interaction tactile and snappy
+      });
+    });
+  </script>
+</div></main><nav class="fixed bottom-0 left-0 right-0 h-16 bg-surface-white border-t border-card-stroke shadow-[0_-4px_0_#E1E7FC] z-40 flex items-center justify-around px-gutter-mobile xl:hidden" data-active-classes="bg-primary text-on-primary rounded-xl"><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" data-path="peta-petualangan" href="#"><span class="material-symbols-outlined text-[20px]">map</span><span class="font-label-caption text-label-caption">Peta</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-primary font-bold" data-path="tantangan-coding" href="#"><span class="material-symbols-outlined text-[20px]">sports_esports</span><span class="font-label-caption text-label-caption">Misi 1</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" data-path="progress-belajar" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="font-label-caption text-label-caption">Progress</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" data-path="koleksi-badge" href="#"><span class="material-symbols-outlined text-[20px]">military_tech</span><span class="font-label-caption text-label-caption">Badge</span></a><a class="flex flex-col items-center justify-center py-space-xs px-space-sm text-on-surface-variant hover:text-on-surface" data-path="mini-proyek" href="#"><span class="material-symbols-outlined text-[20px]">rocket_launch</span><span class="font-label-caption text-label-caption">Proyek</span></a></nav><footer class="hidden md:block w-full bg-surface-white border-t border-card-stroke py-3.5 mt-auto"><div class="w-full px-margin max-w-[1360px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-[16px] text-primary font-bold">CodeQuest Kids</span><span class="font-body-sm text-[12px] text-on-surface-variant">— Petualangan Logika &amp; Masa Depan</span></div><p class="font-label-caption text-[11px] text-on-surface-variant">© 2026 CodeQuest Kids • M-ONE Telkomsel Coding Competition. Hak Cipta Dilindungi.</p></div></footer></body></html>

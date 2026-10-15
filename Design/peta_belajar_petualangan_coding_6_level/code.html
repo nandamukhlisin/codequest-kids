@@ -1,0 +1,440 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "locked-text": "#8F9CB7", "secondary-fixed": "#ffe08f", "tertiary-fixed-dim": "#72d9b4", "on-error": "#ffffff", "on-secondary": "#ffffff", "surface-white": "#FFFFFF", "error-container": "#ffdad6", "canvas-bg": "#F5F7FF", "tertiary-fixed": "#8ff6cf", "surface-container": "#eaedff", "soft-purple": "#A78BFA", "primary-container": "#1550d3", "surface-variant": "#dae2ff", "on-background": "#0d1a39", "on-secondary-fixed": "#241a00", "secondary-fixed-dim": "#ebc24a", "background": "#faf8ff", "on-secondary-container": "#735a00", "primary": "#003aa7", "surface": "#faf8ff", "secondary": "#755b00", "secondary-container": "#fdd259", "primary-fixed": "#dce1ff", "on-surface-variant": "#434654", "on-primary-fixed-variant": "#003cad", "on-tertiary": "#ffffff", "surface-bright": "#faf8ff", "on-primary-container": "#c8d3ff", "on-tertiary-fixed": "#002116", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#584400", "tertiary-container": "#00694f", "purple-shade": "#8B67EB", "card-stroke": "#E1E7FC", "inverse-primary": "#b5c4ff", "surface-dim": "#ced9ff", "on-tertiary-fixed-variant": "#00513c", "tertiary": "#004f3a", "mint-shade": "#43B990", "outline-variant": "#c3c5d7", "primary-shade": "#335FE6", "on-primary-fixed": "#00164d", "surface-container-lowest": "#ffffff", "surface-tint": "#1b53d6", "coral-shade": "#E06852", "on-surface": "#0d1a39", "on-primary": "#ffffff", "outline": "#737686", "surface-container-highest": "#dae2ff", "surface-container-low": "#f2f3ff", "primary-fixed-dim": "#b5c4ff", "yellow-shade": "#E0B32E", "locked-gray": "#D1D8E8", "inverse-on-surface": "eef0ff", "coral-accent": "#FF8B75", "on-tertiary-container": "#81e8c2", "error": "#ba1a1a", "inverse-surface": "#232f4f", "surface-container-high": "#e2e7ff" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter": "1.25rem", "gutter-mobile": "0.75rem", "margin": "2rem", "margin-mobile": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem" }, "fontFamily": { "label-caption": [ "Nunito Sans" ], "headline-lg-mobile": [ "Quicksand" ], "headline-lg": [ "Quicksand" ], "body-sm": [ "Nunito Sans" ], "headline-xl": [ "Quicksand" ], "label-code-block": [ "Space Grotesk" ], "body-md": [ "Nunito Sans" ], "headline-sm": [ "Quicksand" ], "headline-md": [ "Quicksand" ], "label-badge": [ "Nunito Sans" ], "body-lg": [ "Nunito Sans" ], "headline-xl-mobile": [ "Quicksand" ] }, "fontSize": { "label-caption": [ "12px", { "lineHeight": "16px", "fontWeight": "700" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "headline-xl": [ "44px", { "lineHeight": "52px", "fontWeight": "700" } ], "label-code-block": [ "16px", { "lineHeight": "20px", "fontWeight": "700" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "700" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "label-badge": [ "13px", { "lineHeight": "16px", "fontWeight": "800" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "600" } ], "headline-xl-mobile": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ] } } } };</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_2px_0_#D1D8E8]"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-[0_3px_0_#00164d]"><span class="material-symbols-outlined text-[26px]">smart_toy</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">CodeQuest</span><span class="font-headline-md text-headline-md text-coral-shade font-bold">Kids</span></div><span class="font-label-caption text-label-caption text-on-surface-variant -mt-1">M-ONE Telkomsel 2026</span></div></div><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-full shadow-[0_2px_0_#E1E7FC]" data-active-classes="bg-primary text-on-primary shadow-[0_3px_0_#00164d] font-bold"><a class="px-space-md py-space-xs rounded-full font-headline-sm text-label-badge text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="beranda-dashboard" href="#">Beranda / Dashboard</a><a class="px-space-md py-space-xs rounded-full font-headline-sm text-label-badge text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all bg-primary-container" data-path="peta-belajar" href="#">Peta Belajar</a><a class="px-space-md py-space-xs rounded-full font-headline-sm text-label-badge text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tantangan-coding" href="#">Tantangan Coding</a><a class="px-space-md py-space-xs rounded-full font-headline-sm text-label-badge text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="piala-badge" href="#">Piala &amp; Badge</a><a class="px-space-md py-space-xs rounded-full font-headline-sm text-label-badge text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="progress" href="#">Progress</a></nav><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-[0_2px_0_#E1E7FC]"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-yellow-shade text-[20px]">bolt</span><span class="font-headline-sm text-label-badge text-on-surface">750 XP</span></div><div class="w-1 h-3 bg-card-stroke rounded-full mx-space-xs"></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-soft-purple text-[18px]">diamond</span><span class="font-headline-sm text-label-badge text-on-surface">15</span></div></div><div class="flex items-center gap-space-sm bg-surface-container-low pl-space-xs pr-space-md py-space-xs rounded-full shadow-[0_2px_0_#E1E7FC]"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_0_#00164d]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-headline-sm text-label-badge text-on-surface leading-tight">Raka</span><span class="font-label-caption text-[11px] text-primary-shade font-bold -mt-0.5">Explorer</span></div></div></div></div></header><main class="w-full pt-20 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Content Container with Max Constraints -->
+<div class="max-w-7xl mx-auto px-gutter py-space-lg w-full flex flex-col gap-space-lg">
+<!-- Sub-navigation & Header Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<!-- Back Navigation Button -->
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-lowest text-primary shadow-[0_2px_0_#D1D8E8] hover:bg-surface-container-high transition-all active:translate-y-0.5 group self-start" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<span class="font-headline-sm text-label-badge text-on-surface">Kembali ke Dashboard</span>
+<span class="text-label-caption text-primary-shade">🏠</span>
+</a>
+<!-- Status Legend -->
+<div class="flex flex-wrap items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full shadow-[0_2px_0_#E1E7FC] self-start md:self-auto">
+<span class="font-label-caption text-label-caption text-on-surface-variant mr-1">Status:</span>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-mint-shade shadow-sm"></span>
+<span class="font-label-badge text-[12px] text-tertiary">Selesai</span>
+</div>
+<div class="w-1 h-3 bg-card-stroke rounded-full mx-1"></div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-sm animate-pulse"></span>
+<span class="font-label-badge text-[12px] text-primary">Tersedia</span>
+</div>
+<div class="w-1 h-3 bg-card-stroke rounded-full mx-1"></div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-locked-gray shadow-sm"></span>
+<span class="font-label-badge text-[12px] text-locked-text">Terkunci</span>
+</div>
+</div>
+</div>
+<!-- Main Title & Overall Progress Hero Block -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-[0_2px_0_#D1D8E8] flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg relative overflow-hidden">
+<!-- Decorative Backdrop Tint -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-surface-variant/40 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs z-10 max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-badge text-label-badge px-space-sm py-0.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full">Pulau Algoritma Telkomsel</span>
+<span class="font-label-caption text-label-caption text-on-surface-variant">M-ONE 2026</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight flex items-center gap-2">
+          Peta Petualangan Belajar Coding 
+          <span class="text-[28px]">🗺️</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Jelajahi pulau algoritma, selesaikan misi satu per satu untuk membuka kekuatan coder cilik!
+        </p>
+</div>
+<!-- Global Progression Card -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-md rounded-lg shadow-[0_2px_0_#E1E7FC] min-w-[300px] z-10">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-sm text-on-surface">Progres Pulau</span>
+<span class="font-headline-sm text-label-badge text-primary-shade">2 dari 6 Misi (33%)</span>
+</div>
+<!-- Thick Colorful Progress Track -->
+<div class="w-full h-4 bg-surface-container-high rounded-full overflow-hidden p-0.5 shadow-inner">
+<div class="h-full rounded-full bg-gradient-to-r from-primary-shade to-mint-shade shadow-sm transition-all duration-700" style="width: 33.3%;"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 bg-surface-container-lowest px-space-sm py-0.5 rounded-full shadow-[0_1px_0_#E1E7FC]">
+<span class="material-symbols-outlined text-yellow-shade text-[18px]">bolt</span>
+<span class="font-headline-sm text-label-badge text-on-surface">750 XP</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-space-sm py-0.5 rounded-full shadow-[0_1px_0_#E1E7FC]">
+<span class="material-symbols-outlined text-yellow-shade text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="font-headline-sm text-label-badge text-on-surface">12 Bintang</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Robot Kiko Welcome Banner / Speech Card -->
+<div class="bg-gradient-to-r from-primary-fixed/60 via-surface-container to-surface-container-low rounded-lg p-space-md shadow-[0_2px_0_#D1D8E8] flex flex-col sm:flex-row items-center gap-space-md relative overflow-hidden">
+<!-- Mascot Avatar Visual -->
+<div class="relative shrink-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_4px_0_#00164d]">
+<span class="material-symbols-outlined text-[42px] animate-bounce">smart_toy</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_2px_0_#735a00]">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+<!-- Speech Content -->
+<div class="flex flex-col gap-1 text-center sm:text-left flex-grow">
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Halo, Penjelajah Raka! 👋</span>
+<span class="bg-mint-shade/20 text-tertiary font-label-badge text-[11px] px-space-xs py-0.5 rounded-full">Robot Kiko Siaga</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          "Wah, Raka sudah menuntaskan Langkah Pertama! Sekarang pulau <span class="font-bold text-primary">Sequence Master</span> sudah terbuka lebar. Ayo susun perintah dan kumpulkan lebih banyak bintang emas!"
+        </p>
+</div>
+<!-- Action Indicator / Play Callout -->
+<div class="shrink-0 hidden lg:flex items-center gap-1 bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-[0_2px_0_#E1E7FC]">
+<span class="material-symbols-outlined text-coral-shade text-[20px]">explore</span>
+<span class="font-headline-sm text-label-badge text-on-surface">Langkah 2 Siap!</span>
+</div>
+</div>
+<!-- ADVENTURE MAP CONTAINER (Winding 6-Mission Stepper Grid) -->
+<div class="relative w-full py-space-sm flex flex-col gap-space-xl">
+<!-- ================= MISSION 1 & 2 ROW ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg relative">
+<!-- MISSION 1: Coding Explorer (COMPLETED) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_2px_0_#D1D8E8] flex flex-col justify-between gap-space-md relative transition-transform hover:-translate-y-1">
+<!-- Card Top Bar: Badge & Concept -->
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-mint-shade/15 text-tertiary flex items-center justify-center shadow-[0_2px_0_#81e8c2]">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caption text-label-caption text-tertiary">Misi 01 • SELESAI</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Coding Explorer</h3>
+</div>
+</div>
+<!-- Stars & XP Pill -->
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-0.5 text-yellow-shade bg-surface-container-low px-space-xs py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<span class="font-label-caption text-[11px] text-tertiary bg-tertiary-fixed/30 px-space-xs py-0.2 rounded-full">+100 XP Didapat</span>
+</div>
+</div>
+<!-- Mission Concept Tag & Description -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-shade text-[16px]">neurology</span>
+<span class="font-label-badge text-label-badge text-primary-shade">Instruksi Dasar &amp; Gerakan</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Pelajari computational thinking dasar, instruksi arah, dan langkah maju pertama Robot Kiko di jalur hijau.
+            </p>
+</div>
+<!-- Bottom Status & Replay Action Button -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-tertiary font-label-badge text-label-badge">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="">Pencapaian 100%</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface shadow-[0_2px_0_#D1D8E8] hover:bg-surface-container-high active:translate-y-0.5 transition-all">
+<span class="material-symbols-outlined text-primary-shade text-[18px]">replay</span>
+<span class="font-headline-sm text-label-badge">Mainkan Ulang</span>
+</button>
+</div>
+</div>
+<!-- MISSION 2: Sequence Master (CURRENT ACTIVE & HIGHLIGHTED) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-[0_4px_0_#43B990] flex flex-col justify-between gap-space-md relative overflow-hidden transition-transform hover:-translate-y-1">
+<!-- Active Highlight Backdrop Glow -->
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-tertiary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Top Status Bar -->
+<div class="flex items-start justify-between gap-space-xs z-10">
+<div class="flex items-center gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-[0_3px_0_#00164d] animate-pulse">
+<span class="material-symbols-outlined text-[28px]">directions_run</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caption text-label-caption text-primary-shade">Misi 02</span>
+<span class="inline-flex items-center gap-1 bg-primary text-on-primary font-label-badge text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+                    ⚡ Aktif Sekarang
+                  </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Sequence Master</h3>
+</div>
+</div>
+<!-- Target Reward Badge -->
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-caption text-[11px] text-primary font-bold bg-primary-fixed px-space-xs py-0.5 rounded-full">
+                +150 XP &amp; Badge
+              </span>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-caption text-[11px]">
+<span class="material-symbols-outlined text-soft-purple text-[15px]">military_tech</span>
+<span class="">Badge Baru</span>
+</div>
+</div>
+</div>
+<!-- Concept & Mission Narrative -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high/60 p-space-sm rounded-lg z-10">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-coral-shade text-[16px]">alt_route</span>
+<span class="font-label-badge text-label-badge text-coral-shade">Urutan Perintah (Sequencing)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+              Susun urutan perintah (Maju, Belok Kanan, Belok Kiri) secara presisi untuk memandu Kiko melintasi labirin batu karang.
+            </p>
+</div>
+<!-- CTA Primary Button with Tactile Push Feedback -->
+<div class="flex items-center justify-between gap-space-md z-10 pt-1">
+<span class="font-label-caption text-label-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-mint-shade text-[18px]">timer</span>
+              Estimasi: 10 Menit
+            </span>
+<button class="flex items-center justify-center gap-space-xs px-space-lg py-space-xs rounded-full bg-tertiary-container text-on-tertiary shadow-[0_4px_0_#43B990] active:translate-y-1 hover:brightness-110 transition-all">
+<span class="font-headline-sm text-label-badge font-bold">Mulai Petualangan</span>
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ADVENTURE CONNECTOR PATH (Row 1 to Row 2) -->
+<div class="hidden lg:flex items-center justify-center -my-space-md pointer-events-none">
+<div class="w-full max-w-4xl flex items-center justify-between px-space-xl">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-mint-shade"></span>
+<div class="w-24 h-0.5 bg-mint-shade/60"></div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-32 h-0.5 bg-card-stroke border-dashed border-t-2 border-locked-gray"></div>
+<span class="material-symbols-outlined text-locked-text text-[18px]">lock</span>
+<div class="w-32 h-0.5 bg-card-stroke border-dashed border-t-2 border-locked-gray"></div>
+</div>
+</div>
+</div>
+<!-- ================= MISSION 3 & 4 ROW ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg relative">
+<!-- MISSION 3: Loop Adventure (LOCKED) -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-md shadow-[0_2px_0_#E1E7FC] flex flex-col justify-between gap-space-md relative opacity-85 hover:opacity-100 transition-opacity">
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-locked-text flex items-center justify-center shadow-[0_2px_0_#D1D8E8]">
+<span class="material-symbols-outlined text-[26px]">sync</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caption text-label-caption text-locked-text">Misi 03</span>
+<span class="bg-locked-gray/50 text-locked-text font-label-badge text-[10px] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">lock</span> Terkunci
+                  </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface-variant">Loop Adventure</h3>
+</div>
+</div>
+<!-- Reward Preview -->
+<span class="font-label-caption text-[11px] text-locked-text bg-surface-container-high px-space-xs py-0.5 rounded-full">
+              +175 XP
+            </span>
+</div>
+<!-- Concept & Info -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low/70 p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs text-locked-text">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+<span class="font-label-badge text-label-badge">Perulangan (Loops)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Belajar mengulang perintah secara otomatis menggunakan blok REPEAT agar baris kode jadi ringkas dan efisien.
+            </p>
+</div>
+<!-- Bottom Lock State -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-caption text-label-caption text-locked-text flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Selesaikan Misi 2 untuk Membuka
+            </span>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-locked-text cursor-not-allowed shadow-[0_2px_0_#D1D8E8]" disabled="">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-headline-sm text-label-badge">Terkunci</span>
+</button>
+</div>
+</div>
+<!-- MISSION 4: Condition Quest (LOCKED) -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-md shadow-[0_2px_0_#E1E7FC] flex flex-col justify-between gap-space-md relative opacity-85 hover:opacity-100 transition-opacity">
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-locked-text flex items-center justify-center shadow-[0_2px_0_#D1D8E8]">
+<span class="material-symbols-outlined text-[26px]">call_split</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caption text-label-caption text-locked-text">Misi 04</span>
+<span class="bg-locked-gray/50 text-locked-text font-label-badge text-[10px] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">lock</span> Terkunci
+                  </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface-variant">Condition Quest</h3>
+</div>
+</div>
+<!-- Reward Preview -->
+<span class="font-label-caption text-[11px] text-locked-text bg-surface-container-high px-space-xs py-0.5 rounded-full">
+              +200 XP
+            </span>
+</div>
+<!-- Concept & Info -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low/70 p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs text-locked-text">
+<span class="material-symbols-outlined text-[16px]">help</span>
+<span class="font-label-badge text-label-badge">Percabangan (If / Else)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Pahami konsep logika percabangan sederhana: "JIKA jalan buntu di depan, MAKA Robot Kiko belok ke kanan!".
+            </p>
+</div>
+<!-- Bottom Lock State -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-caption text-label-caption text-locked-text flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Selesaikan Misi 3 untuk Membuka
+            </span>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-locked-text cursor-not-allowed shadow-[0_2px_0_#D1D8E8]" disabled="">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-headline-sm text-label-badge">Terkunci</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ADVENTURE CONNECTOR PATH (Row 2 to Row 3) -->
+<div class="hidden lg:flex items-center justify-center -my-space-md pointer-events-none">
+<div class="w-full max-w-4xl flex items-center justify-between px-space-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-locked-text text-[18px]">lock</span>
+<div class="w-48 h-0.5 bg-card-stroke border-dashed border-t-2 border-locked-gray"></div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-48 h-0.5 bg-card-stroke border-dashed border-t-2 border-locked-gray"></div>
+<span class="material-symbols-outlined text-yellow-shade text-[20px]">military_tech</span>
+</div>
+</div>
+</div>
+<!-- ================= MISSION 5 & 6 ROW ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg relative">
+<!-- MISSION 5: Variable World (LOCKED / COMING SOON) -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-md shadow-[0_2px_0_#E1E7FC] flex flex-col justify-between gap-space-md relative opacity-85 hover:opacity-100 transition-opacity">
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-locked-text flex items-center justify-center shadow-[0_2px_0_#D1D8E8]">
+<span class="material-symbols-outlined text-[26px]">data_object</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caption text-label-caption text-locked-text">Misi 05</span>
+<span class="bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-badge text-[10px] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                    Segera Hadir
+                  </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface-variant">Variable World</h3>
+</div>
+</div>
+<!-- Reward Preview -->
+<span class="font-label-caption text-[11px] text-locked-text bg-surface-container-high px-space-xs py-0.5 rounded-full">
+              +225 XP
+            </span>
+</div>
+<!-- Concept & Info -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low/70 p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs text-locked-text">
+<span class="material-symbols-outlined text-[16px]">pin</span>
+<span class="font-label-badge text-label-badge">Variabel &amp; Data Sederhana</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Pelajari konsep dasar variabel untuk menyimpan skor koin, poin baterai, dan data permainan dalam memori Kiko.
+            </p>
+</div>
+<!-- Bottom Lock State -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-caption text-label-caption text-locked-text flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Selesaikan Misi 4 untuk Membuka
+            </span>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-locked-text cursor-not-allowed shadow-[0_2px_0_#D1D8E8]" disabled="">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-headline-sm text-label-badge">Terkunci</span>
+</button>
+</div>
+</div>
+<!-- MISSION 6: Mini Project: Robot Penyelamat (FINAL GRAND CHALLENGE) -->
+<div class="bg-gradient-to-br from-surface-container-lowest to-surface-container rounded-lg p-space-md shadow-[0_2px_0_#D1D8E8] flex flex-col justify-between gap-space-md relative opacity-85 hover:opacity-100 transition-opacity">
+<!-- Card Header with Trophy Theme -->
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-[0_2px_0_#735a00]">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: &quot;FILL&quot; 1;">emoji_events</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caption text-label-caption text-secondary">Misi 06 • TANTANGAN AKHIR</span>
+<span class="bg-locked-gray/60 text-locked-text font-label-badge text-[10px] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">lock</span> Terkunci
+                  </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Mini Project: Robot Penyelamat</h3>
+</div>
+</div>
+<!-- Reward Trophy -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-space-sm py-1 rounded-full shadow-[0_1px_0_#E1E7FC]">
+<span class="material-symbols-outlined text-yellow-shade text-[18px]">trophy</span>
+<span class="font-label-badge text-[11px] text-on-surface">+300 XP &amp; Piala</span>
+</div>
+</div>
+<!-- Concept & Info -->
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest/80 p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+<span class="font-label-badge text-label-badge">Ujian Akhir Coder Cilik M-ONE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Gabungkan seluruh konsep (Sequence, Loop, Condition, Variable) dalam proyek tantangan membuat game mandiri!
+            </p>
+</div>
+<!-- Bottom Lock State -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-caption text-label-caption text-locked-text flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+              Syarat: Selesaikan Misi 1 hingga 5
+            </span>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-locked-text cursor-not-allowed shadow-[0_2px_0_#D1D8E8]" disabled="">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-headline-sm text-label-badge">Terkunci</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Motivational Footer Tip Card -->
+<div class="bg-surface-container-low rounded-lg p-space-md shadow-[0_2px_0_#E1E7FC] flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-[0_1px_0_#E1E7FC]">
+<span class="material-symbols-outlined text-[22px]">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm text-on-surface">Tips Belajar Hari Ini:</span>
+<span class="font-body-sm text-label-caption text-on-surface-variant">
+            Jika kamu mengalami kesalahan langkah kode (bug), jangan sedih! Mencoba lagi adalah rahasia terbesar programmer hebat.
+          </span>
+</div>
+</div>
+<div class="shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface shadow-[0_2px_0_#D1D8E8] hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-soft-purple text-[18px]">menu_book</span>
+<span class="font-headline-sm text-label-badge">Panduan Coder Cilik</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-space-xl mt-auto shadow-[0_-2px_0_#E1E7FC]"><div class="max-w-7xl mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-lg text-center md:text-left"><div class="flex flex-col gap-space-xs"><div class="flex items-center justify-center md:justify-start gap-space-xs"><div class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[16px]">rocket_launch</span></div><span class="font-headline-sm text-headline-sm text-on-surface font-bold">CodeQuest Kids</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Petualangan Logika &amp; Computational Thinking Anak Indonesia. Menyiapkan inovator cilik masa depan bersama Telkomsel M-ONE 2026.</p></div><div class="flex flex-col items-center md:items-end gap-space-xs"><div class="flex items-center gap-space-md"><span class="font-label-badge text-label-badge text-primary bg-surface-container px-space-md py-space-xs rounded-full">M-ONE 2026</span><span class="font-body-sm text-body-sm text-on-surface-variant">Telkomsel Edukasi</span></div><p class="font-label-caption text-label-caption text-locked-text">© 2026 CodeQuest Kids • M-ONE Telkomsel Coding Competition. Hak Cipta Dilindungi.</p></div></div></footer>
+
+</body></html>
